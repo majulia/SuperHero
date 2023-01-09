@@ -19,6 +19,10 @@ export class AppComponent {
       .subscribe((result: SuperHero[]) => (this.heroes = result));
   }
 
+  updateHeroList(heroes: SuperHero[]) {
+    this.heroes = heroes;
+  }
+
   initNewHero() {
     this.heroToEdit = new SuperHero();
   }
