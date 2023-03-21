@@ -5,17 +5,19 @@ import { SuperHeroService } from './services/super-hero.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'SuperHero.UI';
   heroes: SuperHero[] = [];
   heroToEdit?: SuperHero;
+  columnsToDisplay = ['name', 'firstName', 'lastName', 'place', 'button'];
 
-  constructor(private superHeroService: SuperHeroService){}
+  constructor(private superHeroService: SuperHeroService) {}
 
-  ngOnInit(): void{
-    this.superHeroService.getSuperHeroes()
+  ngOnInit(): void {
+    this.superHeroService
+      .getSuperHeroes()
       .subscribe((result: SuperHero[]) => (this.heroes = result));
   }
 
@@ -31,4 +33,4 @@ export class AppComponent {
     this.heroToEdit = hero;
   }
 }
-""
+('');
